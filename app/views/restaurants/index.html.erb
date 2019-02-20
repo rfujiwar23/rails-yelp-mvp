@@ -1,0 +1,21 @@
+<div id="container" style="background: aliceblue; width:100%; margin: 0 auto; padding:50px">
+<h1>Harold and Kumar's Restaurant of Choice</h1>
+
+  <div class="row" style="width:60%; margin: 0 auto;">
+    <div class="cards">
+    <% @restaurants.each do |restaurant| %>
+
+        <p style="font-style: italic; text-shadow: 1px 1px 1px black; padding: 5px; border: 1px solid black; background-color: white;"><strong><%= link_to restaurant.name, restaurant_path(restaurant) %></strong></p>
+        <p><%= restaurant.address %></p>
+        <p><%= restaurant.phone_number %></p>
+        <p><%= restaurant.category %></p>
+    <% end %>
+    </div>
+
+
+  <%= link_to "Add a new Restaurant", new_restaurant_path, class: 'btn btn-primary' %>
+
+  </div>
+
+</div>
+
